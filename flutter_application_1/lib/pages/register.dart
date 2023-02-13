@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home.dart';
-import 'package:flutter_application_1/pages/reset_pass.dart';
+import 'package:flutter_application_1/pages/login.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,28 +77,49 @@ class Login extends StatelessWidget {
                               const EdgeInsets.only(left: 20.0, right: 20.0),
                           child: Column(
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 10.0, bottom: 10.0),
-                                child: SizedBox(
-                                  width: 250,
-                                  height: 250,
-                                  child: Image.asset(
-                                      'assets/images/logo_color.png'),
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 50, top: 50),
+                                child: Text(
+                                  'Crea una cuenta para empezar a usar la app',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 50),
+                              const Align(
+                                alignment: Alignment.centerLeft,
                                 child: Text(
-                                  'Iniciar sesión',
+                                  'Nombre',
                                   style: TextStyle(
-                                      fontSize: 28,
-                                      color: Colors.pink,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 20),
+                                padding:
+                                    const EdgeInsets.only(bottom: 20, top: 5),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    hintText: ('Nombre completo'),
+                                  ),
+                                ),
+                              ),
+                              const Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Email',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(bottom: 20, top: 5),
                                 child: TextField(
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
@@ -108,8 +129,18 @@ class Login extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                              const Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Contraseña',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 0),
+                                padding:
+                                    const EdgeInsets.only(bottom: 10, top: 5),
                                 child: TextField(
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
@@ -119,34 +150,34 @@ class Login extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 10, bottom: 80),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      '¿Olvidaste tu contraseña? ',
-                                      style: TextStyle(fontSize: 14),
+                              const Padding(
+                                padding: EdgeInsets.only(
+                                    left: 20.0, right: 20.0, bottom: 10.0),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'La contraseña debe contener caracteres, números, y símbolos con un mínimo de 6 caracteres.',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey,
                                     ),
-                                    GestureDetector(
-                                      onTap: () async {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (_) =>
-                                                    const ResetPass()));
-                                      },
-                                      child: const Text(
-                                        'Restablecer contraseña',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.pink,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ],
+                                    textAlign: TextAlign.justify,
+                                  ),
                                 ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 30.0),
+                                child: RadioListTile(
+                                    title: const Text(
+                                      'Al registrarme, acepto los términos y condiciones y la política de privacidad',
+                                      style: TextStyle(fontSize: 12),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                    value: 'value',
+                                    groupValue: 'groupValue',
+                                    onChanged: (value) {
+                                      print(value);
+                                    }),
                               ),
                               SizedBox(
                                 height: 50,
@@ -166,7 +197,7 @@ class Login extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(25),
                                   ),
                                   child: const Text(
-                                    'Iniciar sesión',
+                                    'Crear cuenta',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
@@ -179,7 +210,7 @@ class Login extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      '¿Aún no tienes una cuenta? ',
+                                      '¿Ya tienes una cuenta? ',
                                       style: TextStyle(fontSize: 16),
                                     ),
                                     GestureDetector(
@@ -187,10 +218,10 @@ class Login extends StatelessWidget {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (_) => const Home()));
+                                                builder: (_) => const Login()));
                                       },
                                       child: const Text(
-                                        'Crear cuenta',
+                                        'Iniciar sesion',
                                         style: TextStyle(
                                             fontSize: 16,
                                             color: Colors.pink,

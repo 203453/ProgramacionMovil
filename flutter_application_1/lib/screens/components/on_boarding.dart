@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/components/content_boarding.dart';
 
 import '../../pages/login.dart';
+import '../../pages/home.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -113,7 +114,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   onPressed: () async {
                     currentPage == listBoarding.length - 1
                         ? Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => const Login()))
+                            MaterialPageRoute(builder: (_) => const Home()))
                         : pageController.nextPage(
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInQuart);

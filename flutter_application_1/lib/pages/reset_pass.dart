@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home.dart';
-import 'package:flutter_application_1/pages/reset_pass.dart';
+import 'package:flutter_application_1/pages/login.dart';
+import 'package:flutter_application_1/pages/new_pass.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class ResetPass extends StatelessWidget {
+  const ResetPass({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,28 +78,28 @@ class Login extends StatelessWidget {
                               const EdgeInsets.only(left: 20.0, right: 20.0),
                           child: Column(
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 10.0, bottom: 10.0),
-                                child: SizedBox(
-                                  width: 250,
-                                  height: 250,
-                                  child: Image.asset(
-                                      'assets/images/logo_color.png'),
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 50, top: 50),
+                                child: Text(
+                                  'Ingresa tu email para restablecer tu contraseña',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 50),
+                              const Align(
+                                alignment: Alignment.centerLeft,
                                 child: Text(
-                                  'Iniciar sesión',
+                                  'Correo electrónico',
                                   style: TextStyle(
-                                      fontSize: 28,
-                                      color: Colors.pink,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 20),
+                                padding:
+                                    const EdgeInsets.only(bottom: 10, top: 5),
                                 child: TextField(
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
@@ -108,44 +109,19 @@ class Login extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 0),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(15.0),
+                              const Padding(
+                                padding: EdgeInsets.only(
+                                    left: 20.0, right: 20.0, bottom: 80.0),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'Ingrese su correo electrónico registrado y le enviaremos un correo electrónico que contiene un enlace para restablecer su contraseña.',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey,
                                     ),
-                                    hintText: ('Contraseña'),
+                                    textAlign: TextAlign.justify,
                                   ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 10, bottom: 80),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      '¿Olvidaste tu contraseña? ',
-                                      style: TextStyle(fontSize: 14),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () async {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (_) =>
-                                                    const ResetPass()));
-                                      },
-                                      child: const Text(
-                                        'Restablecer contraseña',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.pink,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ],
                                 ),
                               ),
                               SizedBox(
@@ -157,7 +133,7 @@ class Login extends StatelessWidget {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (_) => const Login()));
+                                            builder: (_) => const NewPass()));
                                   },
                                   textColor: Colors.white,
                                   shape: RoundedRectangleBorder(
@@ -166,38 +142,11 @@ class Login extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(25),
                                   ),
                                   child: const Text(
-                                    'Iniciar sesión',
+                                    'Enviar solicitud',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      '¿Aún no tienes una cuenta? ',
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () async {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (_) => const Home()));
-                                      },
-                                      child: const Text(
-                                        'Crear cuenta',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.pink,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ],
                                 ),
                               ),
                             ],

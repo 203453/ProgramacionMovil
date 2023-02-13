@@ -7,24 +7,23 @@ class View02 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: 
-        Column(
+        child: Column(
           children: [
             const Padding(
-              padding:EdgeInsets.only(top: 40.0,bottom:40
-              ),
-            child: Text("Nombre completo"),
+              padding: EdgeInsets.only(top: 40.0, bottom: 40),
+              child: Text("Nombre completo"),
             ),
-          Column(
-            children: const[
-              Text("Azul"),
-              Text("Gissele"),
-              Text("Briones"),
-              Text("Zavala"),
-            ],),
-          ],  
+            Column(
+              children: const [
+                Text("Emilio"),
+                Text("Jarey"),
+                Text("Méndez"),
+                Text("Torres"),
+              ],
+            ),
+          ],
         ),
       ),
-      );
+    );
   }
 }

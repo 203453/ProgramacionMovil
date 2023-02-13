@@ -9,31 +9,31 @@ class View03 extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(top: 50),
         child: Column(
-          children:[
+          children: [
             const Center(
               child: Text(
-                      "Hola",
-                      style: TextStyle(fontSize: 40, color: Colors.red),
-                    ),
+                "Hola",
+                style: TextStyle(fontSize: 40, color: Colors.red),
+              ),
             ),
             Column(
-              children: const[
+              children: const [
                 Text(
-                      "Azul",
-                      style: TextStyle(fontSize: 40, color: Colors.blue),
-                    ),
-                    Text(
-                      "Gissele",
-                      style: TextStyle(fontSize: 40, color: Colors.blue),
-                    ), 
-                    Text(
-                      "Briones",
-                      style: TextStyle(fontSize: 40, color: Colors.blue),
-                    ),
-                    Text(
-                      "Zavala",
-                      style: TextStyle(fontSize: 40, color: Colors.blue),
-                    ),
+                  "Emilio",
+                  style: TextStyle(fontSize: 40, color: Colors.blue),
+                ),
+                Text(
+                  "Jarey",
+                  style: TextStyle(fontSize: 40, color: Colors.blue),
+                ),
+                Text(
+                  "Méndez",
+                  style: TextStyle(fontSize: 40, color: Colors.blue),
+                ),
+                Text(
+                  "Torres",
+                  style: TextStyle(fontSize: 40, color: Colors.blue),
+                ),
               ],
             )
           ],
